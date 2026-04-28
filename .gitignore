@@ -1,1 +1,7 @@
-node_modules
+node_modules/
+my-dapp/node_modules/
+artifacts/
+cache/
+.env
+*.log
+typechain-types/
