@@ -1,0 +1,559 @@
+/* ============================================
+   DApp.css - Web3 DAPP 样式
+   ============================================ */
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ============================================
+   App Container
+   ============================================ */
+.dapp {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.dapp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+/* Network Selector */
+.network-selector {
+  position: relative;
+}
+
+.network-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.network-indicator:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.network-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+.dapp-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* ============================================
+   Connect Screen
+   ============================================ */
+.connect-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connect-card {
+  background: white;
+  border-radius: 24px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+}
+
+.connect-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.connect-card h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+}
+
+.connect-card p {
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.connect-btn {
+  width: 100%;
+  padding: 18px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.connect-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.connect-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.connect-card .hint {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #999;
+}
+
+.connect-card .hint a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.connect-card .hint a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   Dashboard
+   ============================================ */
+.dashboard {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ============================================
+   Wallet Card
+   ============================================ */
+.wallet-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wallet-header h3 {
+  font-size: 18px;
+  color: #1a1a2e;
+}
+
+.disconnect-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #999;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.disconnect-btn:hover {
+  background: #e5e5e5;
+  color: #666;
+}
+
+.wallet-address,
+.wallet-balance {
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-address .label,
+.wallet-balance .label {
+  font-size: 13px;
+  color: #999;
+}
+
+.wallet-address .value {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 14px;
+  color: #333;
+}
+
+.wallet-balance .value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.wallet-balance .value.eth {
+  color: #627eea;
+}
+
+.wallet-balance .value .currency {
+  margin-right: 4px;
+}
+
+.wallet-balance.token {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.wallet-balance.token .value {
+  font-size: 16px;
+  color: #764ba2;
+}
+
+/* ============================================
+   Operation Panel
+   ============================================ */
+.operation-panel {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tab-header {
+  display: flex;
+  background: #f5f5f5;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #333;
+}
+
+.tab.active {
+  color: #667eea;
+  background: white;
+  border-bottom: 3px solid #667eea;
+}
+
+.tab-icon {
+  font-size: 18px;
+}
+
+.tab-content {
+  padding: 28px;
+}
+
+/* ============================================
+   Operations
+   ============================================ */
+.operations {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-title span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.refresh-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.refresh-btn:hover {
+  background: rgba(102, 126, 234, 0.2);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #667eea;
+}
+
+.input-group input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.balance-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #999;
+}
+
+.input-with-btn {
+  display: flex;
+  gap: 10px;
+}
+
+.input-with-btn input {
+  flex: 1;
+}
+
+.query-btn {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: #667eea;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.query-btn:hover:not(:disabled) {
+  background: #5a71d4;
+}
+
+.query-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.token-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.token-badge {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+}
+
+.token-info span:last-child {
+  color: #666;
+  font-size: 14px;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 24px 0;
+}
+
+/* Buttons */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn.primary {
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.submit-btn.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn.secondary {
+  color: white;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.submit-btn.secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 239, 125, 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Messages */
+.error {
+  padding: 14px;
+  background: #fee;
+  color: #c00;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #fcc;
+}
+
+.success {
+  padding: 14px;
+  background: #efe;
+  color: #060;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #cfc;
+}
+
+.success a {
+  color: #667eea;
+  text-decoration: none;
+  margin-left: 8px;
+}
+
+.success a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.dapp-footer {
+  text-align: center;
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .dapp-header {
+    padding: 16px 20px;
+  }
+
+  .dapp-main {
+    padding: 20px;
+  }
+
+  .connect-card {
+    padding: 40px 30px;
+  }
+}

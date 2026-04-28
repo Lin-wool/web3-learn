@@ -1,0 +1,366 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+
+.App-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+.App-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.App-header p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.App-main {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================
+   钱包组件样式
+   ============================================ */
+
+.wallet-container {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+}
+
+.wallet-container h2 {
+  margin: 0 0 24px 0;
+  color: #333;
+  font-size: 24px;
+}
+
+/* 连接按钮 */
+.connect-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.connect-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.connect-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* 钱包信息展示 */
+.wallet-info {
+  text-align: left;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-row .label {
+  font-weight: 600;
+  color: #666;
+}
+
+.info-row .value {
+  color: #333;
+}
+
+.info-row .address {
+  font-family: monospace;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.info-row .balance {
+  font-size: 20px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+/* 刷新按钮 */
+.refresh-button {
+  margin-top: 20px;
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.refresh-button:hover {
+  background: #e5e5e5;
+}
+
+/* 错误提示 */
+.error-message {
+  background: #fee;
+  color: #c00;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #fcc;
+}
+
+/* 成功提示 */
+.success-message {
+  background: #efe;
+  color: #060;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #cfc;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.success-message a {
+  color: #667eea;
+}
+
+/* ============================================
+   转账表单样式（新增）
+   ============================================ */
+
+.transfer-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px solid #eee;
+}
+
+.transfer-section h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #666;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.input-group input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* 发送按钮 */
+.send-button {
+  width: 100%;
+  background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 8px;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 198, 239, 0.4);
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #999;
+}
+
+.hint a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   TokenBalance 组件样式
+   ============================================ */
+
+.token-balance-container {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.token-balance-container h2 {
+  margin: 0 0 24px 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.wallet-section {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.wallet-section p {
+  margin: 0;
+  color: #060;
+  font-size: 14px;
+}
+
+.query-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.query-section h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.query-button {
+  width: 100%;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.query-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 239, 125, 0.4);
+}
+
+.query-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.result p {
+  margin: 8px 0;
+}
+
+.result .label {
+  font-weight: 600;
+  color: #666;
+  margin-right: 8px;
+}
+
+.result .value {
+  color: #333;
+}
+
+.result .balance {
+  font-size: 20px;
+  font-weight: bold;
+  color: #11998e;
+}
+
+.tips {
+  margin-top: 24px;
+  padding: 16px;
+  background: #fffbeb;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 13px;
+  color: #666;
+}
+
+.tips h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.tips ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.tips li {
+  margin: 4px 0;
+}
+
+.tips .note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #999;
+}
